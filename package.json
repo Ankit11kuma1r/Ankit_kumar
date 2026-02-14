@@ -1,0 +1,9 @@
+{
+  "name": "premium-milk-business-site",
+  "version": "1.0.0",
+  "description": "Premium milk business website with order form, discount game, dashboard and owner email alerts",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
