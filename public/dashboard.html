@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmPure Owner Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="dashboard">
+    <h1>Incoming Milk Orders</h1>
+    <p>Track all customer orders placed from the website.</p>
+    <button id="refreshBtn" class="btn">Refresh Orders</button>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Qty (L/day)</th>
+            <th>Delivery Time</th>
+            <th>Milk Type</th>
+            <th>Discount</th>
+            <th>Notes</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTableBody">
+          <tr><td colspan="10">Loading orders...</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><a href="/">← Back to website</a></p>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

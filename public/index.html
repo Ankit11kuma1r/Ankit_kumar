@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmPure Milk | Premium Chemical-Free Milk</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>FarmPure Premium Milk</h1>
+      <p>
+        99.99% chemical-free, lab-tested milk delivered directly from trusted farms to your home.
+      </p>
+      <button id="openOrderModalBtn" class="btn">Order Now</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="features">
+      <h2>Why Choose Us?</h2>
+      <div class="grid">
+        <article>
+          <h3>Lab-Tested Quality</h3>
+          <p>Every batch is tested to maintain the highest quality and safety standards.</p>
+          <a href="#lab-tested-section" class="feature-link">View Testing Equipment</a>
+        </article>
+        <article>
+          <h3>Direct from Farms</h3>
+          <p>Fresh milk sourced directly from ethical farms with no middlemen.</p>
+          <a href="#farmers-success-section" class="feature-link">Read Farmer Success Stories</a>
+        </article>
+        <article>
+          <h3>Subscription Convenience</h3>
+          <p>Daily delivery tailored to your household needs and preferred timing.</p>
+          <button id="useLocationBtn" type="button" class="btn btn-secondary">Use My Current Location</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="game" id="offer-game">
+      <h2>Spin & Win Monthly Discount</h2>
+      <p>Play once before order submission and win a discount on your total monthly bill.</p>
+      <button id="spinBtn" class="btn">Spin Discount Wheel</button>
+      <p id="discountResult" class="result">No discount unlocked yet.</p>
+    </section>
+
+    <section id="lab-tested-section" class="section-card">
+      <h2>Lab Tested Milk Assurance</h2>
+      <p>Our milk is checked with advanced tools before dispatch.</p>
+      <div class="image-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80" alt="Lactometer testing milk sample" />
+          <figcaption>Lactometer Quality Check</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1582719363731-f0e8e4f95f7f?auto=format&fit=crop&w=900&q=80" alt="Lab equipment used for milk testing" />
+          <figcaption>Purity & Adulteration Test</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1581093588401-16ecf31d4f7c?auto=format&fit=crop&w=900&q=80" alt="Laboratory sample analysis" />
+          <figcaption>Microbiology and Safety Validation</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="farmers-success-section" class="section-card">
+      <h2>Direct from Farms: Farmer Success Stories</h2>
+      <p>We ensure farmers receive true value for every liter they supply.</p>
+      <div class="story-grid">
+        <article class="story-card">
+          <img src="https://images.unsplash.com/photo-1598515214146-dab39da1243a?auto=format&fit=crop&w=1000&q=80" alt="Farmer with cows in dairy farm" />
+          <h3>Ramesh Yadav, Sitapur</h3>
+          <p>
+            Ramesh doubled his monthly farm income after joining FarmPure and now supplies fresh cow milk daily.
+          </p>
+        </article>
+        <article class="story-card">
+          <img src="https://images.unsplash.com/photo-1562183241-b937e95585b6?auto=format&fit=crop&w=1000&q=80" alt="Dairy farmer feeding cows" />
+          <h3>Sunita Devi, Bareilly</h3>
+          <p>
+            Sunita expanded from 3 to 9 cows, because she now gets transparent pricing and timely payments.
+          </p>
+        </article>
+        <article class="story-card">
+          <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=1000&q=80" alt="Farmer pouring fresh milk" />
+          <h3>Rahul Singh, Shahjahanpur</h3>
+          <p>
+            Rahul invested in better cattle nutrition and improved milk quality with FarmPure’s quality-linked incentives.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="locationModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="locationModalTitle">
+    <div class="modal-content">
+      <h3 id="locationModalTitle">Use Current Location?</h3>
+      <p>
+        Allow location access and we will auto-fill your delivery address box with latitude and longitude.
+      </p>
+      <div class="modal-actions">
+        <button id="allowLocationBtn" type="button" class="btn">Allow & Auto-fill</button>
+        <button id="closeLocationModalBtn" type="button" class="btn btn-secondary">Cancel</button>
+      </div>
+      <p id="locationMessage"></p>
+    </div>
+  </div>
+
+  <div id="orderModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+    <div class="modal-content large">
+      <div class="modal-header">
+        <h2 id="orderModalTitle">Milk Order Form</h2>
+        <button id="closeOrderModalBtn" type="button" class="close-btn" aria-label="Close order form">&times;</button>
+      </div>
+      <form id="orderForm">
+        <div class="form-grid">
+          <label>Full Name<input type="text" name="customerName" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Phone<input type="tel" name="phone" required /></label>
+          <label>Daily Quantity (Liters)<input type="number" step="0.5" min="0.5" name="quantityLiters" required /></label>
+          <label>Preferred Delivery Time<input type="time" name="deliveryTime" required /></label>
+          <label>Milk Type
+            <select name="milkType" required>
+              <option value="">Select type</option>
+              <option value="Cow Milk">Cow Milk</option>
+              <option value="Buffalo Milk">Buffalo Milk</option>
+              <option value="A2 Milk">A2 Milk</option>
+            </select>
+          </label>
+        </div>
+        <label>Delivery Address<textarea name="address" id="deliveryAddress" required></textarea></label>
+        <label>Additional Notes<textarea name="notes" placeholder="Special requirements..."></textarea></label>
+
+        <input type="hidden" name="discountPercent" id="discountPercent" value="0" />
+        <button type="submit" class="btn">Place Order</button>
+        <p id="formMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>Owner dashboard: <a href="/dashboard">View Orders</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

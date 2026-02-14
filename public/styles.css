@@ -1,0 +1,209 @@
+:root {
+  --primary: #1f7a4c;
+  --light: #f2fff6;
+  --text: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.5)),
+    url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1500&q=80') center/cover;
+  color: white;
+  padding: 7rem 1rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.features .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+article,
+.game,
+.section-card,
+.dashboard {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.feature-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: #4b5f53;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.75rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.55rem;
+  border: 1px solid #b5d3c1;
+  border-radius: 6px;
+  background: white;
+}
+
+.result,
+.success,
+.error {
+  font-weight: 700;
+}
+
+.success {
+  color: #0b7c2b;
+}
+
+.error {
+  color: #c01414;
+}
+
+.image-grid,
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.image-grid img,
+.story-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.story-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.7rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  width: min(640px, 95vw);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content.large {
+  width: min(820px, 95vw);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  border: 1px solid #d8e8dd;
+  padding: 0.5rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  margin: 2rem 0;
+}
